@@ -1,0 +1,874 @@
+Script started on 2021-02-14 13:02:09-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ [K]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gvc[K[Kcc -Sa[K[KWall -g -o match match.c
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) break 7[K67
+Breakpoint 1 at [34m0x12f9[m: file [32mmatch.c[m, line 67.
+(gdb) breaj [K[Kk 68
+Breakpoint 2 at [34m0x1310[m: file [32mmatch.c[m, line 68.
+(gdb) break lseejk[K[Kk=[K[Kk
+Breakpoint 3 at [34m0x1100[m
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+
+Breakpoint 1, [33mfirstTest[m ([36mname1[m=0x7fffffffe2f0 "/etc/hosts", [36mname2[m=0x7fffffffe360 "/etc/services")[m
+   [m at [32mmatch.c[m:67
+67		retval = lseek(fd1, 72, SEEK_CUR);
+(gdb) print SEE[K[K[Kretval
+$1 = 0
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) dd[K[Kn
+Program not restarted.
+(gdb) continue
+Continuing.
+
+Breakpoint 3, [33m__lseek64[m ([36mfd[m=3, [36moffset[m=72, [36mwhence[m=1) at [32m../sysdeps/unix/sysv/linux/lseek64.c[m:28
+28	../sysdeps/unix/sysv/linux/lseek64.c: No such file or directory.
+(gdb) re[K[Kor[K[Kprint v[Kretval
+No symbol "retval" in current context.
+(gdb) continue
+Continuing.
+
+Breakpoint 2, [33mfirstTest[m ([36mname1[m=0x7fffffffe2f0 "/etc/hosts", [36mname2[m=0x7fffffffe360 "/etc/services")[m
+   [m at [32mmatch.c[m:68
+68		if (retval < 0) perror("lseek error");
+(gdb) ret[K[K[Kcontinue[K[K[K[K[K[K[K[Kbfreak[K[K[K[K[K[Kbreak 69
+Breakpoint 4 at [34m0x555555555322[m: file [32mmatch.c[m, line 69.
+(gdb) hbrea[K[K[K[K[Kbrea[Kak 722[K
+Breakpoint 5 at [34m0x55555555534d[m: file [32mmatch.c[m, line 72.
+(gdb) break 74
+Breakpoint 6 at [34m0x555555555376[m: file [32mmatch.c[m, line 74.
+(gdb) break 77
+Breakpoint 7 at [34m0x5555555553a1[m: file [32mmatch.c[m, line 77.
+(gdb) contu[Kinue
+Continuing.
+
+Breakpoint 4, [33mfirstTest[m ([36mname1[m=0x7fffffffe2f0 "/etc/hosts", [36mname2[m=0x7fffffffe360 "/etc/services")[m
+   [m at [32mmatch.c[m:69
+69		retval = read(fd1, buf1, 8);
+(gdb) re[K[Kprint retval
+$2 = 72
+(gdb) contiun[K[Knue
+Continuing.
+
+Breakpoint 5, [33mfirstTest[m ([36mname1[m=0x7fffffffe2f0 "/etc/hosts", [36mname2[m=0x7fffffffe360 "/etc/services")[m
+   [m at [32mmatch.c[m:72
+72		retval = lseek(fd2, 20, SEEK_CUR);
+(gdb) ret[K[K[Kpro[Kint retval
+$3 = 8
+(gdb) pro[Kint [K[K[K[K[K[Kcontinue
+Continuing.
+
+Breakpoint 3, [33m__lseek64[m ([36mfd[m=4, [36moffset[m=20, [36mwhence[m=1) at [32m../sysdeps/unix/sysv/linux/lseek64.c[m:28
+28	../sysdeps/unix/sysv/linux/lseek64.c: No such file or directory.
+(gdb) print retval
+No symbol "retval" in current context.
+(gdb) continue
+Continuing.
+
+Breakpoint 6, [33mfirstTest[m ([36mname1[m=0x7fffffffe2f0 "/etc/hosts", [36mname2[m=0x7fffffffe360 "/etc/services")[m
+   [m at [32mmatch.c[m:74
+74		retval = read(fd2, buf2, 8);
+(gdb) continue[C[C[C[C[C[Cprint retval
+$4 = 20
+(gdb) conti[Kinue
+Continuing.
+
+Breakpoint 7, [33mfirstTest[m ([36mname1[m=0x7fffffffe2f0 "/etc/hosts", [36mname2[m=0x7fffffffe360 "/etc/services")[m
+   [m at [32mmatch.c[m:77
+77		retval = memcmp(buf1, buf2, 8);
+(gdb) pir[K[Krint retval
+$5 = 8
+(gdb) exi[Kit
+Undefined command: "exit".  Try "help".
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 666325] will be killed.
+
+Quit anyway? (y or n) y
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim break/c[K[K.c[K[K[K[K[K[K[Kmatch.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H[97m[41mE325: ATTENTION[m
+Found a swap file by the name ".match.c.swp"
+[10Cowned by: amko248   dated: Sun Feb 14 13:08:38 2021
+[9Cfile name: ~amko248/CS270/Lab1/match.c
+[10Cmodified: no
+[9Cuser name: amko248   host name: amko248
+[8Cprocess ID: 666385 (STILL RUNNING)
+While opening file "match.c"
+[13Cdated: Fri Feb 12 16:06:03 2021
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r match.c"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file ".match.c.swp"
+    to avoid this message.
+
+[32mSwap file ".match.c.swp" already exists![m
+[32m[O]pen Read-Only, (E)dit anyway, (R)ecover, (Q)uit, (A)bort: [?25h[m[49;1H[K[49;1H[?2004l[23;2t[23;1t
+[?2004l[?1l>[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ ls
+MyDebugSession.txt  [0m[01;32mmatch[0m  match.c
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match,c[K[K.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H[97m[41mE325: ATTENTION[m
+Found a swap file by the name ".match.c.swp"
+[10Cowned by: amko248   dated: Sun Feb 14 13:08:38 2021
+[9Cfile name: ~amko248/CS270/Lab1/match.c
+[10Cmodified: no
+[9Cuser name: amko248   host name: amko248
+[8Cprocess ID: 666385 (STILL RUNNING)
+While opening file "match.c"
+[13Cdated: Fri Feb 12 16:06:03 2021
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r match.c"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file ".match.c.swp"
+    to avoid this message.
+
+[32mSwap file ".match.c.swp" already exists![m
+[32m[O]pen Read-Only, (E)dit anyway, (R)ecover, (Q)uit, (A)bort: [?25h[m[49;1H[K[49;1H[?2004l[23;2t[23;1t
+[?2004l[?1l>[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;1H[34m/* --- firstTest --- */[m
+[32mvoid[m firstTest([32mchar[m *name1, [32mchar[m *name2) {[4;9H[32mint[m fd1, fd2;[5;9H[32mint[m retval;[7;9H[38;5;130mif[m ((fd1 = open(name1, O_RDONLY)) < [31m0[m) {[8;17Hperror(name1);[9;17Hexit(-[31m1[m);[10;9H}[11;9H[38;5;130mif[m ((fd2 = open(name2, O_RDONLY)) < [31m0[m) {[12;17Hperror(name2);[13;17Hexit(-[31m1[m);[14;9H}[16;9H[34m/* Hint -- the error is an incorrect constant in the next line */[m[17;9Hretval = lseek(fd1, [31m72[m, [31mSEEK_CUR[m);[18;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[19;9Hretval = read(fd1, buf1, [31m8[m);[20;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[22;9Hretval = lseek(fd2, [31m20[m, [31mSEEK_CUR[m);[23;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[24;9Hretval = read(fd2, buf2, [31m8[m);[25;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[27;9Hretval = memcmp(buf1, buf2, [31m8[m);[28;9H[38;5;130mif[m (retval != [31m0[m) {[29;17Hsorry([31m"first Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the first one correctly![m[35m\n[m[31m"[m);[32;9H}
+}
+
+[34m/* --- secondTest --- */[m
+[32mvoid[m secondTest([32mchar[m *filename1, [32mchar[m *filename2) {[37;9H[32mint[m filedes1, filedes2;[38;9H[32mint[m *value;[39;9H[32mint[m retval;[41;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[42;17Hperror(filename1);[43;17Hexit(-[31m1[m);[44;9H}[45;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[46;17Hperror(filename2);[47;17Hexit(-[31m1[m);[48;9H}[49;87H74,2-9[8C57%[24;9H[?25h[?25l[49;77H^[[24;9H[49;77H  [24;9H[49;77H^[[24;9H[49;79H[[24;9H[49;77H   [24;9H[49;77H^[[24;9H[49;79H[[24;9H[49;80H2[24;9H[49;81H;[24;9H[49;82H2[24;9H[49;77H      [24;9H[?25h[?25l[49;77H~@k[24;9H[49;77H   [25;9H[49;88H5[25;9H[?25h[?25l[49;77H~@k[25;9H[49;77H   [26;8H[49;88H6,1-8[26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [27;9H[49;88H7,2-9[27;9H[?25h[?25l[49;77H~@k[27;9H[49;77H   [28;9H[49;88H8[28;9H[?25h[?25l[49;77H~@k[28;9H[49;77H   [29;16H[49;88H9,2-16[29;16H[?25h[?25l[49;77H~@k[29;16H[49;77H   [30;9H[28;26H[106m{[30;9H}[m[49;87H80,2-9 [30;9H[?25h[?25l[49;77H~@k[30;9H[49;77H   [29;16H[28;26H{[30;9H}[49;87H79,2-16[29;16H[?25h[?25l[49;77H~@k[29;16H[49;77H   [28;9H[49;88H8,2-9 [28;9H[?25h[?25l[49;77H~@k[28;9H[49;77H   [27;9H[49;88H7[27;9H[?25h[?25l[49;77H~@k[27;9H[49;77H   [27;10H[49;90H3-10[27;10H[?25h[?25l[49;77H~@k[27;10H[49;77H   [27;11H[49;90H4-11[27;11H[?25h[?25l[49;77H~@k[27;11H[49;77H   [27;12H[49;90H5-12[27;12H[?25h[?25l[49;77H~@k[27;12H[49;77H   [27;13H[49;90H6-13[27;13H[?25h[?25l[49;77H~@k[27;13H[49;77H   [27;14H[49;90H7-14[27;14H[?25h[?25l[49;77H~@k[27;14H[49;77H   [27;15H[49;90H8-15[27;15H[?25h[?25l[49;77H~@k[27;15H[49;77H   [27;16H[49;90H9-16[27;16H[?25h[?25l[49;77H~@k[27;16H[49;77H   [27;17H[49;90H10-17[27;17H[?25h[?25l[49;77H~@k[27;17H[49;77H   [27;18H[49;91H1-18[27;18H[?25h[?25l[49;77H~@k[27;18H[49;77H   [27;19H[49;91H2-19[27;19H[?25h[?25l[49;77H~@k[27;19H[49;77H   [27;20H[49;91H3-20[27;20H[?25h[?25l[49;77H~@k[27;20H[49;77H   [27;21H[49;91H4-21[27;21H[?25h[?25l[49;77H~@k[27;21H[49;77H   [27;22H[49;91H5-22[27;22H[?25h[?25l[49;77H~@k[27;22H[49;77H   [27;23H[49;91H6-23[27;23H[?25h[?25l[49;77H~@k[27;23H[49;77H   [27;24H[106m([13C)[m[49;91H7-24[27;24H[?25h[?25l[49;77H~@k[27;24H[49;77H   [27;25H([13C)[49;91H8-25[27;25H[?25h[?25l[49;77H~@k[27;25H[49;77H   [27;26H[49;91H9-26[27;26H[?25h[?25l[49;77H~@k[27;26H[49;77H   [27;27H[49;90H20-27[27;27H[?25h[?25l[49;77H~@k[27;27H[49;77H   [27;28H[49;91H1-28[27;28H[?25h[?25l[49;77H~@k[27;28H[49;77H   [27;29H[49;91H2-29[27;29H[?25h[?25l[49;77H~@k[27;29H[49;77H   [27;30H[49;91H3-30[27;30H[?25h[?25l[49;77H~@k[27;30H[49;77H   [27;31H[49;91H4-31[27;31H[?25h[?25l[49;77H~@k[27;31H[49;77H   [27;32H[49;91H5-32[27;32H[?25h[?25l[49;77H~@k[27;32H[49;77H   [27;33H[49;91H6-33[27;33H[?25h[?25l[49;77H~@k[27;33H[49;77H   [27;34H[49;91H7-34[27;34H[?25h[?25l[49;77H~@k[27;34H[49;77H   [27;35H[49;91H8-35[27;35H[?25h[?25l[49;77H~@k[27;35H[49;77H   [27;36H[49;91H9-36[27;36H[?25h[?25l[49;77H~@k[27;36H[49;77H   [27;37H[49;90H30-37[27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [27;38H[27;24H[106m([13C)[m[49;91H1-38[27;38H[?25h[?25l[49;77Hi[27;38H[49;77H [27;38H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H77,31-38      57%[27;38H[?25h[?25l)[106m;[m[27;39H[K[27;37H[106m)[m;[49;91H0-37[27;37H[?25h[?25l[31m[106m0[m);[31m0[m[106m)[m[49;91H1-38[27;38H[?25h[49;1H[K[27;37H[?25l[49;77H^[[27;37H[49;77H  [27;38H[27;24H([13C)[49;87H77,30-37      57%[27;37H[?25h[?25l[49;77H:[27;37H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cls[Kvim match.cgdb ./matchcc -Wall -g -o match match.c[18Pdb ./matchcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[C[18@gcc -Wall -g -o match[C[C[C[C[C[C[C[C[18Pdb ./matchcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[C[18@gcc -Wall -g -o match[C[C[C[C[C[C[C[C
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cls[Kvim match.cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+Sorry!  You did not debug the second Test correctly.
+[Inferior 1 (process 666498) exited with code 0377]
+(gdb) list break[K[K[K[K[K[K[K[K[K[Kinfo break
+No breakpoints or watchpoints.
+(gdb) break 100
+Breakpoint 1 at [34m0x555555555449[m: file [32mmatch.c[m, line 100.
+(gdb) break 2[K102
+Breakpoint 2 at [34m0x555555555472[m: file [32mmatch.c[m, line 102.
+(gdb) break 105
+Breakpoint 3 at [34m0x55555555549d[m: file [32mmatch.c[m, line 105.
+(gdb) break 107
+Breakpoint 4 at [34m0x5555555554c6[m: file [32mmatch.c[m, line 107.
+(gdb) break 1[K101[K[K10
+Breakpoint 5 at [34m0x5555555554f1[m: file [32mmatch.c[m, line 110.
+(gdb) break 112
+Breakpoint 6 at [34m0x5555555554fc[m: file [32mmatch.c[m, line 112.
+(gdb) break 1134[K[K4
+Breakpoint 7 at [34m0x55555555550f[m: file [32mmatch.c[m, line 114.
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+
+Breakpoint 1, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:100
+100		retval = lseek(filedes1, 64, SEEK_CUR);
+(gdb) inf[K[K[Kprint retval
+$1 = 3
+(gdb) continue
+Continuing.
+
+Breakpoint 2, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:102
+102		retval = read(filedes1, buf1, 4);
+(gdb) continue[C[C[C[C[C[Cprint retval
+$2 = 64
+(gdb) print retval[C[C[C[C[C[C[4Pcontinue
+Continuing.
+
+Breakpoint 3, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:105
+105		retval = lseek(filedes2, 124, SEEK_CUR);
+(gdb) continue[C[C[C[C[C[Cprint retval[C[C[C[C[C[C[4Pcontinue
+Continuing.
+
+Breakpoint 4, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:107
+107		retval = read(filedes2, buf2, 4);
+(gdb) continue[C[C[C[C[C[Cprint retval
+$3 = 124
+(gdb) print retval[C[C[C[C[C[C[4Pcontinue
+Continuing.
+
+Breakpoint 5, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:110
+110		value = (int *) buf2;
+(gdb) continue[C[C[C[C[C[Cprint retval
+$4 = 4
+(gdb) print retval[C[C[C[C[C[C[4Pcontinue
+Continuing.
+
+Breakpoint 6, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:112
+112		*value = *value | 0x02000000;
+(gdb) continue[C[C[C[C[C[Cprint retval
+$5 = 4
+(gdb) print retval[C[C[C[C[C[C[4Pcontinue
+Continuing.
+
+Breakpoint 7, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:114
+114		retval = memcmp(buf1, buf2, 4);
+(gdb) continue[C[C[C[C[C[Cprint retval
+$6 = 4
+(gdb) clear [K[K[K[K[K[Kes[Kxit
+Undefined command: "exit".  Try "help".
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 666710] will be killed.
+
+Quit anyway? (y or n) y
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x02000000[m;[27;9Hretval = memcmp(buf1, buf2, [31m4[m);[28;9H[38;5;130mif[m (retval != [31m0[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H}
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H114,30-37     Bot[27;37H[?25h[?25l[49;77H^[[27;37H[49;77H  [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;81H;[27;37H[49;77H     [27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [29;37H[28;26H{[30;9H}[49;89H6,23-37[29;37H[?25h[?25l[49;77H~@k[29;37H[49;77H   [30;16H[106m{[32;9H}[m[49;89H7,9-16 [30;16H[?25h[?25l[49;77H~@k[30;16H[49;77H   [31;37H[30;16H{[32;9H}[49;89H8,23-37[31;37H[?25h[?25l[49;77H~@k[31;37H[49;77H   [32;9H[30;16H[106m{[32;9H}[m[49;89H9,2-9  [32;9H[?25h[?25l[49;77H~@k[32;9H[49;77H   [33;17H[30;16H{[32;9H}[33;16H[34m[106m()[m[49;88H20,17 [33;17H[?25h[?25l[49;77H~@k[33;17H[49;77H   [34;1H[33;16H[34m()[m[49;89H1,0-1[34;1H[?25h[?25l[49;77H~@k[34;1H[49;77H   [35;18H[49;89H2,18 [35;18H[?25h[?25l[49;77H~@k[35;18H[49;77H   [36;12H[106m{[48;1H}[m[49;89H3,12[36;12H[?25h[?25l[49;77H~@k[36;12H[49;77H   [37;27H[36;12H{[48;1H}[49;89H4,20-27[37;27H[?25h[?25l[49;77H~@k[37;27H[49;77H   [38;27H[49;89H5[38;27H[?25h[?25l[49;77H~@k[38;27H[49;77H   [39;1H[49;89H6,0-1  [39;1H[?25h[?25l[49;77H~@k[39;1H[49;77H   [40;35H[49;89H7,28-35[40;35H[?25h[?25l[49;77H~@k[40;35H[49;77H   [41;37H[41;15H[106m([21C)[m[49;89H8,30-37[41;37H[?25h[?25l[49;77H~@k[41;37H[49;77H   [42;32H[41;15H([21C)[49;89H9,25-32[42;32H[?25h[?25l[49;77H~@k[42;32H[49;77H   [43;1H[49;88H30,0-1  [43;1H[?25h[?25l[49;77H~@k[43;1H[49;77H   [44;33H[49;89H1,26-33[44;33H[?25h[?25l[49;77H~@k[44;33H[49;77H   [45;34H[49;89H2,27-34[45;34H[?25h[?25l[49;77H~@k[45;34H[49;77H   [46;33H[49;89H3,26-33[46;33H[?25h[?25l[49;77H~@k[46;33H[49;77H   [47;29H[49;89H4,22-29[47;29H[?25h[?25l[49;77H~@k[47;29H[49;77H   [48;11H[34m[106m()[m[49;89H5,11   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [47;29H[48;10H[34m()[m[49;89H4,22-29[47;29H[?25h[?25l[49;77H~@k[47;29H[49;77H   [46;33H[49;89H3,26-33[46;33H[?25h[?25l[49;77H~@k[46;33H[49;77H   [45;34H[49;89H2,27-34[45;34H[?25h[?25l[49;77H~@k[45;34H[49;77H   [44;33H[49;89H1,26-33[44;33H[?25h[?25l[49;77H~@k[44;33H[49;77H   [43;1H[49;89H0,0-1  [43;1H[?25h[?25l[49;77H~@k[43;1H[49;77H   [42;32H[49;88H29,25-32[42;32H[?25h[?25l[49;77H~@k[42;32H[49;77H   [41;37H[41;15H[106m([21C)[m[49;89H8,30-37[41;37H[?25h[?25l[49;77H~@k[41;37H[49;77H   [40;35H[41;15H([21C)[49;89H7,28-35[40;35H[?25h[?25l[49;77H~@k[40;35H[49;77H   [39;1H[49;89H6,0-1  [39;1H[?25h[?25l[49;77H~@k[39;1H[49;77H   [38;27H[49;89H5,20-27[38;27H[?25h[?25l[49;77H~@k[38;27H[49;77H   [37;27H[49;89H4[37;27H[?25h[?25l[49;77H~@k[37;27H[49;77H   [36;12H[106m{[48;1H}[m[49;89H3,12   [36;12H[?25h[?25l[49;77H~@k[36;12H[49;77H   [35;18H[36;12H{[48;1H}[49;89H2,18[35;18H[?25h[?25l[49;77H~@k[35;18H[49;77H   [34;1H[49;89H1,0-1[34;1H[?25h[?25l[49;77H~@k[34;1H[49;77H   [33;17H[34m[106m()[m[49;89H0,17 [33;17H[?25h[?25l[49;77H~@k[33;17H[49;77H   [32;9H[30;16H[106m{[32;9H}[m[33;16H[34m()[m[49;88H19,2-9[32;9H[?25h[?25l[49;77H~@k[32;9H[49;77H   [31;37H[30;16H{[32;9H}[49;89H8,23-37[31;37H[?25h[?25l[49;77H~@k[31;37H[49;77H   [30;16H[106m{[32;9H}[m[49;89H7,9-16 [30;16H[?25h[?25l[49;77H~@k[30;16H[49;77H   [29;37H[30;16H{[32;9H}[49;89H6,23-37[29;37H[?25h[?25l[49;77H~@k[29;37H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [27;37H[28;26H{[30;9H}[49;89H4,30-37[27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [27;38H[27;24H[106m([13C)[m[49;92H1-38[27;38H[?25h[?25l[49;77Hi[27;38H[49;77H [27;38H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H114,31-38     Bot[27;38H[?25h[?25l)[106m;[m[27;39H[K[27;37H[106m)[m;[49;92H0-37[27;37H[?25h[?25l[31m[106m0[m);[31m0[m[106m)[m[49;92H1-38[27;38H[?25h[49;1H[K[27;37H[?25l[49;77H^[[27;37H[49;77H  [27;38H[27;24H([13C)[49;87H114,30-37     Bot[27;37H[?25h[?25l[49;77H:[27;37H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) breakpoint [K[K[K[K[K[K 112
+Breakpoint 1 at [34m0x14fc[m: file [32mmatch.c[m, line 112.
+(gdb) break 113[K4
+Breakpoint 2 at [34m0x150f[m: file [32mmatch.c[m, line 114.
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+
+Breakpoint 1, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:112
+warning: Source file is more recent than executable.
+112		*value = *value | 0x02000000;
+(gdb) ret[K[K[Krunbreak 11424[C[C[C[C[C[C[6Prun[Kcontinue
+Continuing.
+
+Breakpoint 2, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:114
+114		retval = memcmp(buf1, buf2, 0);
+(gdb) retval
+Undefined command: "retval".  Try "help".
+(gdb) o[Kprint retval
+$1 = 4
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 666781] will be killed.
+
+Quit anyway? (y or n) y
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim brea[K[K[K[Kmatch.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x02000000[m;[27;9Hretval = memcmp(buf1, buf2, [31m0[m);[28;9H[38;5;130mif[m (retval != [31m0[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H}
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H114,30-37     Bot[27;37H[?25h[?25l[49;77H^[[27;37H[49;77H  [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;77H    [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;81H;[27;37H[49;77H     [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;81H;[27;37H[49;82H2[27;37H[49;77H      [27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [27;37H[28;26H{[30;9H}[49;89H4,30-37[27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [27;38H[27;24H[106m([13C)[m[49;92H1-38[27;38H[?25h[?25l[49;77Hi[27;38H[49;77H [27;38H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H114,31-38     Bot[27;38H[?25h[?25l)[106m;[m[27;39H[K[27;37H[106m)[m;[49;92H0-37[27;37H[?25h[?25l[31m[106m4[m);[31m4[m[106m)[m[49;92H1-38[27;38H[?25h[?25l[27;24H([13C)[49;89H3,2-9  [26;9H[?25h[?25l[49;89H2,31-38[25;38H[?25h[?25l[49;89H1[24;38H[?25h[?25l[49;89H0,23-30[23;30H[?25h[?25l[49;89H1,31-38[24;38H[?25h[?25l[49;92H0-37[24;37H[?25h[?25l[49;89H2[25;37H[?25h[?25l[49;91H29-36[25;36H[?25h[?25l[49;92H8-35[25;35H[?25h[?25l[49;92H7-34[25;34H[?25h[?25l[49;92H6-33[25;33H[?25h[?25l[49;92H5-32[25;32H[?25h[?25l[49;92H4-31[25;31H[?25h[?25l[31m0[m[5C;[25;37H[K[49;92H3-30[25;30H[?25h[?25l[6C[31m0[m;[49;92H4-31[25;31H[?25h[?25l[49;89H1[24;31H[?25h[?25l[49;89H0,23-30[23;30H[?25h[?25l[49;88H09,1    [22;1H[?25h[?25l[21;31H[106m([12C)[m[49;89H8,24-31[21;31H[?25h[?25l([12C)[49;89H7[20;31H[?25h[?25l[19;31H[106m([13C)[m[49;89H6[19;31H[?25h[?25l([13C)[49;89H5[18;31H[?25h[?25l[49;89H4,1    [17;1H[?25h[?25l[16;31H[106m([12C)[m[49;89H3,24-31[16;31H[?25h[?25l([12C)[49;89H2[15;31H[?25h[?25l[14;31H[106m([13C)[m[49;89H1[14;31H[?25h[?25l([13C)[49;89H0[13;31H[?25h[?25l[49;87H99,2-9   [12;9H[?25h[?25l[8;57H[106m{[11;9H}[m[49;88H8,3-10[11;10H[?25h[?25l[8;57H{[11;9H}[49;88H7,12-26[10;26H[?25h[?25l[49;88H6,17-31[9;31H[?25h[?25l[49;88H5,24[8;31H[?25h[?25l[4;57H[106m{[7;9H}[m[49;88H4,3-10 [7;10H[?25h[?25l[4;57H{[7;9H}[49;88H3,12-26[6;26H[?25h[?25l[1;48r[1;1H[L[1;49r[1;9H[32mint[m filedes1, filedes2;[49;87H[K[49;87H92,17-31      98%[6;31H[?25h[?25l[1;48r[1;1H[L[1;49r[1;1H[32mvoid[m secondTest([32mchar[m *filename1, [32mchar[m *filename2) {[49;87H[K[49;87H91,24-31      97%[6;31H[?25h[?25l[1;48r[1;1H[L[1;49r[1;1H[34m/* --- secondTest --- */[m[49;87H[K[49;87H90,1[10C96%[6;1H[?25h[?25l[1;48r[1;1H[L[1;49r[49;87H[K[49;87H89,13-20      95%[6;20H[?25h[?25l[1;48r[1;1H[L[1;49r[1;1H}[49;87H[K[49;87H88,13-20      94%[6;20H[?25h[?25l[1;48r[1;1H[L[1;49r[1;9H}[49;87H[K[49;87H87,24-31      93%[6;31H[?25h[?25l[1;48r[1;1H[L[1;49r[1;17Hprintf([31m"You debugged the first one correctly![m[35m\n[m[31m"[m);[49;87H[K[49;87H86,31[9C91%[6;31H[?25h[?25l[1;48r[1;1H[L[1;49r[1;9H} [38;5;130melse[m {[49;87H[K[49;87H85,25[9C90%[6;25H[?25h[?25l[1;48r[1;1H[L[1;49r[1;17Hsorry([31m"first Test"[m);[49;87H[K[49;87H84,1[10C89%[6;1H[?25h[?25l[1;48r[1;1H[L[1;49r[1;9H[38;5;130mif[m (retval != [31m0[m) {[49;87H[K[49;87H83,2[10C88%[6;2H[?25h[?25l[1;48r[1;1H[L[1;49r[1;9Hretval = memcmp(buf1, buf2, [31m0[m);[49;87H[K[49;87H82,3-10[7C87%[4;16H[106m{[6;9H}[?25h[?25l[m[4;16H{[6;9H}[49;88H3,2   [7;2H[?25h[?25l[49;88H4,1[8;1H[?25h[?25l[49;88H5,25[9;25H[?25h[?25l[49;88H6,31[10;31H[?25h[?25l[49;88H7,24-31[11;31H[?25h[?25l[49;88H8,13-20[12;20H[?25h[?25l[49;88H9[13;20H[?25h[?25l[49;87H90,1    [14;1H[?25h[?25l[49;88H1,24-31[15;31H[?25h[?25l[49;88H2,17[16;31H[?25h[?25l[49;88H3,12-26[17;26H[?25h[?25l[15;57H[106m{[18;9H}[m[49;88H4,3-10 [18;10H[?25h[?25l[15;57H{[18;9H}[49;88H5,24-31[19;31H[?25h[?25l[49;88H6,17[20;31H[?25h[?25l[49;88H7,12-26[21;26H[?25h[?25l[19;57H[106m{[22;9H}[m[49;88H8,3-10 [22;10H[?25h[?25l[19;57H{[22;9H}[49;88H9,2-9 [23;9H[?25h[?25l[49;87H100,24-31[24;31H[?25h[?25l[49;87H99,2-9   [23;9H[?25h[?25l[49;87H100,24-31[24;31H[?25h[?25l[25;31H[106m([13C)[m[49;89H1[25;31H[?25h[?25l([13C)[49;89H2[26;31H[?25h[?25l[27;31H[106m([12C)[m[49;89H3[27;31H[?25h[?25l([12C)[49;89H4,1    [28;1H[?25h[?25l[49;89H5,24-31[29;31H[?25h[?25l[30;31H[106m([13C)[m[49;89H6[30;31H[?25h[?25l([13C)[49;89H7[31;31H[?25h[?25l[32;31H[106m([12C)[m[49;89H8[32;31H[?25h[?25l([12C)[49;89H9,1    [33;1H[?25h[?25l[49;88H10,23-30[34;30H[?25h[?25l[49;89H1,24-31[35;31H[?25h[?25l[49;89H2[36;31H[?25h[?25l[49;89H3,2-9  [37;9H[?25h[?25l[49;89H4,24-31[38;31H[?25h[?25l[49;92H3-30[38;30H[?25h[?25l[49;92H2-29[38;29H[?25h[?25l[49;92H1-28[38;28H[?25h[?25l[49;92H2-29[38;29H[?25h[?25l[49;92H3-30[38;30H[?25h[?25l[49;92H4-31[38;31H[?25h[?25l[49;92H5-32[38;32H[?25h[?25l[49;92H6-33[38;33H[?25h[?25l[49;92H7-34[38;34H[?25h[?25l[49;92H8-35[38;35H[?25h[?25l[49;92H7-34[38;34H[?25h[?25l[39;26H[106m{[41;9H}[m[49;89H5,20-27[39;27H[?25h[?25l{[41;9H}[49;89H6,20-34[40;34H[?25h[?25l[39;26H[106m{[41;9H}[m[49;89H5,20-27[39;27H[?25h[?25l{[41;9H}[49;89H4,27-34[38;34H[?25h[?25l[49;89H3,2-9  [37;9H[?25h[?25l[49;89H2,27-34[36;34H[?25h[?25l[49;89H1[35;34H[?25h[?25l[49;89H2[36;34H[?25h[?25l[49;89H3,2-9  [37;9H[?25h[?25l[49;89H4,27-34[38;34H[?25h[49;1H[K[38;33H[?25l[49;77H^[[38;33H[49;77H  [38;34H[49;87H114,26-33     87%[38;33H[?25h[?25l[49;77HL[38;33H[49;77H [43;9H[41;16H[106m{[43;9H}[m[49;89H9,2-9  [43;9H[?25h[?25l[49;77H:[43;9H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cgdb ./matchvim match.cgdb ./matchvim match.cgdb ./matchcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[C[18@gcc -Wall -g -o match[C[C[C[C[C[C[C[C
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) break 112
+Breakpoint 1 at [34m0x14fc[m: file [32mmatch.c[m, line 112.
+(gdb) break 114
+Breakpoint 2 at [34m0x1508[m: file [32mmatch.c[m, line 114.
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+
+Breakpoint 1, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:112
+112		*value = *value | 0x00000000;
+(gdb) retval value[K[K[K[K[K*value
+Undefined command: "retval".  Try "help".
+(gdb) print *value
+$1 = 4
+(gdb) continue
+Continuing.
+
+Breakpoint 2, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:114
+114		retval = memcmp(buf1, buf2, 4);
+(gdb) print reval[K[K[Ktval
+$2 = 4
+(gdb) print buf1
+$3 = "\006\000\000\000t ho", '\000' <repeats 91 times>
+(gdb) print buf2
+$4 = "\004\000\000\000rnet", '\000' <repeats 91 times>
+(gdb) exi[K[K[Kquit
+A debugging session is active.
+
+	Inferior 1 [process 666835] will be killed.
+
+Quit anyway? (y or n) y
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x00000000[m;[27;9Hretval = memcmp(buf1, buf2, [31m4[m);[28;9H[38;5;130mif[m (retval != [31m0[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m [106m{[m[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H[106m}[m
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H119,2-9[7CBot[32;9H[?25h[?25l[49;77H^[[32;9H[49;77H  [32;9H[49;77H^[[32;9H[49;79H[[32;9H[49;77H   [32;9H[49;77H^[[32;9H[49;79H[[32;9H[49;80H2[32;9H[49;77H    [32;9H[49;77H^[[32;9H[49;79H[[32;9H[49;80H2[32;9H[49;81H;[32;9H[49;82H2[32;9H[49;77H      [32;9H[?25h[?25l[49;77H~@k[32;9H[49;77H   [33;9H[30;16H{[32;9H}[49;88H20,9  [33;9H[?25h[?25l[49;77H~@k[33;9H[49;77H   [32;9H[30;16H[106m{[32;9H}[m[49;88H19,2-9[32;9H[?25h[?25l[49;77H~@k[32;9H[49;77H   [31;16H[30;16H{[32;9H}[49;89H8,2-16[31;16H[?25h[?25l[49;77H~@k[31;16H[49;77H   [30;9H[28;26H[106m{[30;9H}[m[49;89H7,2-9 [30;9H[?25h[?25l[49;77H~@k[30;9H[49;77H   [29;16H[28;26H{[30;9H}[49;89H6,2-16[29;16H[?25h[?25l[49;77H~@k[29;16H[49;77H   [28;9H[49;89H5,2-9 [28;9H[?25h[?25l[49;77H~@k[28;9H[49;77H   [27;9H[49;89H4[27;9H[?25h[?25l[49;77H~@k[27;9H[49;77H   [26;8H[49;89H3,1-8[26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [25;9H[49;89H2,2-9[25;9H[?25h[?25l[49;77H~@k[25;9H[49;77H   [24;9H[49;89H1[24;9H[?25h[?25l[49;77H~@k[24;9H[49;77H   [24;10H[49;91H3-10[24;10H[?25h[?25l[49;77H~@k[24;10H[49;77H   [25;10H[49;89H2[25;10H[?25h[?25l[49;77H~@k[25;10H[49;77H   [25;11H[49;91H4-11[25;11H[?25h[?25l[49;77H~@k[25;11H[49;77H   [25;12H[49;91H5-12[25;12H[?25h[?25l[49;77H~@k[25;12H[49;77H   [25;13H[49;91H6-13[25;13H[?25h[?25l[49;77H~@k[25;13H[49;77H   [25;14H[49;91H7-14[25;14H[?25h[?25l[49;77H~@k[25;14H[49;77H   [25;15H[49;91H8-15[25;15H[?25h[?25l[49;77H~@k[25;15H[49;77H   [25;16H[49;91H9-16[25;16H[?25h[?25l[49;77H~@k[25;16H[49;77H   [25;17H[49;91H10-17[25;17H[?25h[?25l[49;77H~@k[25;17H[49;77H   [25;18H[49;92H1-18[25;18H[?25h[?25l[49;77H~@k[25;18H[49;77H   [25;19H[49;92H2-19[25;19H[?25h[?25l[49;77H~@k[25;19H[49;77H   [25;20H[49;92H3-20[25;20H[?25h[?25l[49;77H~@k[25;20H[49;77H   [25;21H[49;92H4-21[25;21H[?25h[?25l[49;77H~@k[25;21H[49;77H   [25;22H[49;92H5-22[25;22H[?25h[?25l[49;77H~@k[25;22H[49;77H   [25;23H[49;92H6-23[25;23H[?25h[?25l[49;77H~@k[25;23H[49;77H   [25;24H[49;92H7-24[25;24H[?25h[?25l[49;77H~@k[25;24H[49;77H   [25;25H[49;92H8-25[25;25H[?25h[?25l[49;77H~@k[25;25H[49;77H   [25;26H[49;92H9-26[25;26H[?25h[?25l[49;77H~@k[25;26H[49;77H   [25;27H[49;91H20-27[25;27H[?25h[?25l[49;77H~@k[25;27H[49;77H   [25;28H[49;92H1-28[25;28H[?25h[?25l[49;77H~@k[25;28H[49;77H   [25;29H[49;92H2-29[25;29H[?25h[?25l[49;77H~@k[25;29H[49;77H   [25;30H[49;92H3-30[25;30H[?25h[?25l[49;77H~@k[25;30H[49;77H   [25;31H[49;92H4-31[25;31H[?25h[?25l[49;77H~@k[25;31H[49;77H   [25;32H[49;92H5-32[25;32H[?25h[?25l[49;77H~@k[25;32H[49;77H   [25;31H[49;92H4-31[25;31H[?25h[?25l[49;77Hi[25;31H[49;77H [25;31H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H112,24-31     Bot[25;31H[?25h[?25l[5C;[25;37H[K[49;92H3-30[25;30H[?25h[?25l[31m2000000[m;[49;92H4-31[25;31H[?25h[?25l[49;89H1[24;31H[?25h[?25l[49;89H0,23-30[23;30H[?25h[?25l[49;88H09,1    [22;1H[?25h[?25l[21;31H[106m([12C)[m[49;89H8,24-31[21;31H[?25h[?25l([12C)[49;89H7[20;31H[?25h[?25l[19;31H[106m([13C)[m[49;89H6[19;31H[?25h[?25l([13C)[49;89H5[18;31H[?25h[?25l[49;89H4,1    [17;1H[?25h[?25l[49;89H5,24-31[18;31H[?25h[?25l[19;31H[106m([13C)[m[49;89H6[19;31H[?25h[?25l([13C)[49;89H7[20;31H[?25h[?25l[49;92H3-30[20;30H[?25h[?25l[49;89H6[19;30H[?25h[?25l[49;89H5[18;30H[?25h[?25l[49;89H4,1    [17;1H[?25h[?25l[49;89H3,23-30[16;30H[?25h[?25l[49;89H2[15;30H[?25h[?25l[49;89H1[14;30H[?25h[?25l[49;89H0[13;30H[?25h[?25l[49;89H1[14;30H[?25h[?25l[49;89H2[15;30H[?25h[?25l[49;89H3[16;30H[?25h[?25l[49;89H4,1    [17;1H[?25h[?25l[49;89H5,23-30[18;30H[?25h[?25l[49;89H6[19;30H[?25h[?25l[49;89H7[20;30H[?25h[?25l[49;89H8[21;30H[?25h[?25l[49;89H9,1    [22;1H[?25h[?25l[49;88H10,23-30[23;30H[?25h[?25l[49;89H1[24;30H[?25h[?25l[49;89H2[25;30H[?25h[?25l[49;89H1[24;30H[?25h[?25l[49;89H0[23;30H[?25h[?25l[49;88H09,1    [22;1H[?25h[?25l[49;89H8,23-30[21;30H[?25h[?25l[49;89H7[20;30H[?25h[?25l[49;89H6[19;30H[?25h[?25lr[106m([13C)[m[49;92H4-31[19;31H[?25h[?25l([13C)[49;89H5[18;31H[?25h[?25l[49;89H4,1    [17;1H[?25h[?25l[16;31H[106m([12C)[m[49;89H3,24-31[16;31H[?25h[?25l([12C)[49;89H2[15;31H[?25h[?25l[49;92H3-30[15;30H[?25h[?25l[49;92H2-29[15;29H[?25h[?25l[49;92H1-28[15;28H[?25h[?25l[49;92H2-29[15;29H[?25h[?25l[49;92H3-30[15;30H[?25h[?25l[49;92H4-31[15;31H[?25h[?25l[49;92H5-32[15;32H[?25h[?25l[49;92H6-33[15;33H[?25h[?25l[49;92H7-34[15;34H[?25h[?25l[49;92H6-33[15;33H[?25h[?25l[49;92H5-32[15;32H[?25h[?25l[49;92H4-31[15;31H[?25h[?25l[49;92H3-30[15;30H[?25h[?25l[49;92H2-29[15;29H[?25h[?25l[49;92H3-30[15;30H[?25h[?25l[49;92H2-29[15;29H[?25h[?25l[49;89H1[14;29H[?25h[?25l[49;89H2[15;29H[?25h[?25l[49;92H3-30[15;30H[?25h[?25l[49;92H4-31[15;31H[?25h[?25l[49;92H5-32[15;32H[?25h[?25l[49;92H6-33[15;33H[?25h[?25l[49;92H7-34[15;34H[?25h[?25l[49;92H6-33[15;33H[?25h[?25l[49;92H5-32[15;32H[?25h[?25l[49;92H4-31[15;31H[?25h[?25l[16;31H[106m([12C)[m[49;89H3[16;31H[?25h[?25l([12C)[49;89H4,1    [17;1H[?25h[?25l[49;89H5,24-31[18;31H[?25h[?25l[19;31H[106m([13C)[m[49;89H6[19;31H[?25h[?25l([13C)[49;89H7[20;31H[?25h[?25l[21;31H[106m([12C)[m[49;89H8[21;31H[?25h[?25l([12C)[49;89H9,1    [22;1H[?25h[?25l[49;88H10,23-30[23;30H[?25h[?25l[49;89H1,24-31[24;31H[?25h[?25l[49;89H2[25;31H[?25h[?25l[49;89H3,2-9  [26;9H[?25h[?25l[49;89H2,24-31[25;31H[?25h[?25l[49;89H3,2-9  [26;9H[?25h[?25l[49;89H4,24-31[27;31H[?25h[?25l[28;26H[106m{[30;9H}[m[49;89H5,20-27[28;27H[?25h[?25l{[30;9H}[49;89H4,24-31[27;31H[?25h[?25l[49;92H5-32[27;32H[?25h[?25l[49;92H6-33[27;33H[?25h[?25l[49;92H7-34[27;34H[?25h[?25l[49;92H8-35[27;35H[?25h[?25l[49;92H9-36[27;36H[?25h[?25l[49;91H30-37[27;37H[?25h[?25l[27;24H[106m([13C)[m[49;92H1-38[27;38H[?25h[?25l4[106mi[m);i[106m)[m[49;92H2-39[27;39H[?25h[?25l[31m4[m)[106m;[m[27;40H[K[27;38H[106m)[m;[49;92H1-38[27;38H[?25h[?25l)[106m;[m[27;39H[K[27;37H[106m)[m;[49;92H0-37[27;37H[?25h[?25l[106m`[m);`[106m)[m[49;92H1-38[27;38H[?25h[?25l[31m[106m1[m);[31m1[m[106m)[m[49;92H2-39[27;39H[?25h[?25l)[106m;[m[27;40H[K[27;38H[106m)[m;[49;92H1-38[27;38H[?25h[?25l)[106m;[m[27;39H[K[27;37H[106m)[m;[49;92H0-37[27;37H[?25h[?25l[31m[106m1[m);[31m1[m[106m)[m[49;92H1-38[27;38H[?25h[49;1H[K[27;37H[?25l[49;77H^[[27;37H[49;77H  [27;38H[27;24H([13C)[49;87H114,30-37     Bot[27;37H[?25h[?25l[49;77H:[27;37H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cgdb ./matchcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[C[18@gcc -Wall -g -o match[C[C[C[C[C[C[C[C
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) breakpoint 1[K[K[K[K[K[K[K 113[K4
+Breakpoint 1 at [34m0x14ef[m: file [32mmatch.c[m, line 114.
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+
+Breakpoint 1, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:114
+114		retval = memcmp(buf1, buf2, 1);
+(gdb) re[K[Kprint retval
+$1 = 4
+(gdb) print memcp[Kmp
+$2 = {<text gnu-indirect-function variable, no debug info>[33m[m} [34m0x7ffff7e60590[m <[33mmemcmp_ifunc[m>
+(gdb) print buf1
+$3 = "\006\000\000\000t ho", '\000' <repeats 91 times>
+(gdb) d[Kprint buf2
+$4 = "\004\000\000\002rnet", '\000' <repeats 91 times>
+(gdb) pei[K[Krint /x buf1
+$5 = {0x6, 0x0, 0x0, 0x0, 0x74, 0x20, 0x68, 0x6f, 0x0 [2m<repeats [m[2m92[m[2m times>[m}
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) qi[Kuit
+A debugging session is active.
+
+	Inferior 1 [process 666912] will be killed.
+
+Quit anyway? (y or n) y
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ print[K[K[K[K[Kvim c[Ksh[K[Kc+[K[Kmatch.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x02000000[m;[27;9Hretval = memcmp(buf1, buf2, [31m1[m);[28;9H[38;5;130mif[m (retval != [31m0[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H}
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H114,30-37     Bot[27;37H[?25h[?25l[49;77H^[[27;37H[49;77H  [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;77H   [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;77H    [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;81H;[27;37H[49;77H     [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;81H;[27;37H[49;82H2[27;37H[49;77H      [27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [29;37H[28;26H{[30;9H}[49;89H6,23-37[29;37H[?25h[?25l[49;77H~@k[29;37H[49;77H   [30;16H[106m{[32;9H}[m[49;89H7,9-16 [30;16H[?25h[?25l[49;77H~@k[30;16H[49;77H   [29;37H[30;16H{[32;9H}[49;89H6,23-37[29;37H[?25h[?25l[49;77H~@k[29;37H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [27;37H[28;26H{[30;9H}[49;89H4,30-37[27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [25;37H[49;89H2,30-37[25;37H[?25h[?25l[49;77H~@k[25;37H[49;77H   [24;37H[49;89H1[24;37H[?25h[?25l[49;77H~@k[24;37H[49;77H   [25;37H[49;89H2[25;37H[?25h[?25l[49;77H~@k[25;37H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [27;37H[49;89H4,30-37[27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [25;37H[49;89H2,30-37[25;37H[?25h[?25l[49;77H~@k[25;37H[49;77H   [24;37H[49;89H1[24;37H[?25h[?25l[49;77H~@k[24;37H[49;77H   [25;37H[49;89H2[25;37H[?25h[?25l[49;77H~@k[25;37H[49;77H   [25;36H[49;91H29-36[25;36H[?25h[?25l[49;77H~@k[25;36H[49;77H   [25;35H[49;92H8-35[25;35H[?25h[?25l[49;77H~@k[25;35H[49;77H   [25;34H[49;92H7-34[25;34H[?25h[?25l[49;77H~@k[25;34H[49;77H   [25;33H[49;92H6-33[25;33H[?25h[?25l[49;77H~@k[25;33H[49;77H   [25;32H[49;92H5-32[25;32H[?25h[?25l[49;77H~@k[25;32H[49;77H   [25;31H[49;92H4-31[25;31H[?25h[?25l[49;77H~@k[25;31H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [27;31H[49;89H4,24-31[27;31H[?25h[?25l[49;77H~@k[27;31H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [28;25H {[30;9H}[49;92H8-25[28;25H[?25h[?25l[49;77H~@k[28;25H[49;77H   [28;24H[28;12H[106m([11C)[m[49;92H7-24[28;24H[?25h[?25l[49;77H~@k[28;24H[49;77H   [28;23H[28;12H([11C)[49;92H6-23[28;23H[?25h[?25l[49;77H~@k[28;23H[49;77H   [28;24H[28;12H[106m([11C)[m[49;92H7-24[28;24H[?25h[?25l[49;77H~@k[28;24H[49;77H   [28;23H[28;12H([11C)[49;92H6-23[28;23H[?25h[?25l[49;77H~@k[28;23H[49;77H   [28;24H[28;12H[106m([11C)[m[49;92H7-24[28;24H[?25h[?25l[49;77Hi[28;24H[49;77H [28;24H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H115,17-24     Bot[28;24H[?25h[?25l)[106m [m{[28;26H[K[28;23H[106m)[m [49;92H6-23[28;23H[?25h[?25l[31m[106m4[m) {[31m4[m[106m)[m[49;92H7-24[28;24H[?25h[49;1H[K[28;23H[?25l[49;77H^[[28;23H[49;77H  [28;24H[28;12H([11C)[49;87H115,16-23     Bot[28;23H[?25h[?25l[49;77H:[28;23H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?25h[?25l[49;1H[K[28;23H[49;87H115,16-23     Bot[28;23H[?25h[?25l[49;77H~@k[28;23H[49;77H   [27;23H[49;89H4[27;23H[?25h[?25l[49;77H~@k[27;23H[49;77H   [27;24H[106m([13C)[m[49;92H7-24[27;24H[?25h[?25l[49;77H~@k[27;24H[49;77H   [27;25H([13C)[49;92H8-25[27;25H[?25h[?25l[49;77H~@k[27;25H[49;77H   [27;26H[49;92H9-26[27;26H[?25h[?25l[49;77H~@k[27;26H[49;77H   [27;27H[49;91H20-27[27;27H[?25h[?25l[49;77H~@k[27;27H[49;77H   [27;28H[49;92H1-28[27;28H[?25h[?25l[49;77H~@k[27;28H[49;77H   [27;29H[49;92H2-29[27;29H[?25h[?25l[49;77H~@k[27;29H[49;77H   [27;30H[49;92H3-30[27;30H[?25h[?25l[49;77H~@k[27;30H[49;77H   [27;31H[49;92H4-31[27;31H[?25h[?25l[49;77H~@k[27;31H[49;77H   [27;32H[49;92H5-32[27;32H[?25h[?25l[49;77H~@k[27;32H[49;77H   [27;33H[49;92H6-33[27;33H[?25h[?25l[49;77H~@k[27;33H[49;77H   [27;34H[49;92H7-34[27;34H[?25h[?25l[49;77H~@k[27;34H[49;77H   [27;35H[49;92H8-35[27;35H[?25h[?25l[49;77H~@k[27;35H[49;77H   [27;36H[49;92H9-36[27;36H[?25h[?25l[49;77H~@k[27;36H[49;77H   [27;37H[49;91H30-37[27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [27;38H[27;24H[106m([13C)[m[49;92H1-38[27;38H[?25h[?25l[49;77Hi[27;38H[49;77H [27;38H[49;1H[1m-- INSERT --[m[49;87H[K[49;87H114,31-38     Bot[27;38H[?25h[?25l)[106m;[m[27;39H[K[27;37H[106m)[m;[49;92H0-37[27;37H[?25h[?25l[31m[106m4[m);[31m4[m[106m)[m[49;92H1-38[27;38H[?25h[49;1H[K[27;37H[?25l[49;77H^[[27;37H[49;77H  [27;38H[27;24H([13C)[49;87H114,30-37     Bot[27;37H[?25h[?25l[49;77H:[27;37H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cgdb ./matchcc -Wall -g -o match match.c
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./matchcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[C[18@gcc -Wall -g -o match[C[C[C[C[C[C[C[C[18Pdb ./matchvim match.cgdb ./matchcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+Sorry!  You did not debug the second Test correctly.
+[Inferior 1 (process 667002) exited with code 0377]
+(gdb) quit[K[K[K[Kexit
+Undefined command: "exit".  Try "help".
+(gdb) quit
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gdb ./matchcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./matchvim match.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x02000000[m;[27;9Hretval = memcmp(buf1, buf2, [31m4[m);[28;9H[38;5;130mif[m (retval != [31m4[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H}
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H114,30-37     Bot[27;37H[?25h[?25l[49;77H^[[27;37H[49;77H  [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;77H   [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;77H    [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;81H;[27;37H[49;77H     [27;37H[49;77H^[[27;37H[49;79H[[27;37H[49;80H2[27;37H[49;81H;[27;37H[49;82H2[27;37H[49;77H      [27;37H[?25h[?25l[49;77H~@k[27;37H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [29;37H[28;26H{[30;9H}[49;89H6,23-37[29;37H[?25h[?25l[49;77H~@k[29;37H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [28;25H {[30;9H}[49;92H8-25[28;25H[?25h[?25l[49;77H~@k[28;25H[49;77H   [28;24H[28;12H[106m([11C)[m[49;92H7-24[28;24H[?25h[?25l[49;77H~@k[28;24H[49;77H   [28;23H[28;12H([11C)[49;92H6-23[28;23H[?25h[?25l[49;77H~@k[28;23H[49;77H   [28;22H[49;92H5-22[28;22H[?25h[?25l[49;77H^[[28;22H[49;77H  [28;22H[49;77H^[[28;22H[49;77H  [28;22H[?25h[?25l[49;77H:[28;22H[49;1H[K[49;1H:[?2004h[?25hwq[?25l[49;3H[K[49;3H[?25hq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cgdb ./matchcc -Wall -g -o match match.c
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) break 113[K4
+Breakpoint 1 at [34m0x150f[m: file [32mmatch.c[m, line 114.
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+
+Breakpoint 1, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:114
+114		retval = memcmp(buf1, buf2, 4);
+(gdb) terv[K[K[K[Kpi[Krint retval
+$1 = 4
+(gdb) continue
+Continuing.
+Sorry!  You did not debug the second Test correctly.
+[Inferior 1 (process 667039) exited with code 0377]
+(gdb) quit
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gdb ./matchcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[C
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x02000000[m;[27;9Hretval = memcmp(buf1, buf2, [31m4[m);[28;9H[38;5;130mif[m (retval != [31m4[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H}
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H115,15-22     Bot[28;22H[?25h[?25l[49;77H^[[28;22H[49;77H  [28;22H[49;77H^[[28;22H[49;79H[[28;22H[49;77H   [28;22H[49;77H^[[28;22H[49;79H[[28;22H[49;80H2[28;22H[49;77H    [28;22H[49;77H^[[28;22H[49;79H[[28;22H[49;80H2[28;22H[49;81H;[28;22H[49;77H     [28;22H[49;77H^[[28;22H[49;79H[[28;22H[49;80H2[28;22H[49;81H;[28;22H[49;82H2[28;22H[49;77H      [28;22H[?25h[?25l[49;77H~@k[28;22H[49;77H   [29;22H[106m([13C)[m[49;89H6,8-22 [29;22H[?25h[?25l[49;77H~@k[29;22H[49;77H   [28;22H[29;22H([13C)[49;89H5,15-22[28;22H[?25h[?25l[49;77H~@k[28;22H[49;77H   [28;23H[49;92H6-23[28;23H[?25h[?25l[49;77H~@k[28;23H[49;77H   [28;24H[28;12H[106m([11C)[m[49;92H7-24[28;24H[?25h[?25l[49;77Hi[28;24H[49;77H [28;24H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H115,17-24     Bot[28;24H[?25h[?25l)[106m [m{[28;26H[K[28;23H[106m)[m [49;92H6-23[28;23H[?25h[?25l[31m[106m0[m) {[31m0[m[106m)[m[49;92H7-24[28;24H[?25h[?25l[27;24H[106m([13C)[m[28;12H([11C)[49;89H4[27;24H[?25h[?25l[49;92H8-25[27;25H[?25h[?25l([13C)[49;92H9-26[27;26H[?25h[?25l[49;91H20-27[27;27H[?25h[?25l[49;92H1-28[27;28H[?25h[?25l[49;92H2-29[27;29H[?25h[?25l[49;92H3-30[27;30H[?25h[?25l[49;92H4-31[27;31H[?25h[?25l[49;92H5-32[27;32H[?25h[?25l[49;89H3,2-9  [26;9H[?25h[?25l[49;89H2,25-32[25;32H[?25h[?25l[49;92H4-31[25;31H[?25h[?25l[49;92H3-30[25;30H[?25h[?25l[49;92H4-31[25;31H[?25h[?25l[31m0[m[5C;[25;37H[K[49;92H3-30[25;30H[?25h[?25l[31m6000000[m;[49;92H4-31[25;31H[?25h[49;1H[K[25;30H[?25l[49;77H^[[25;30H[49;77H  [25;31H[49;87H112,23-30     Bot[25;30H[?25h[?25l[49;77H:[25;30H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cgdb ./matchcc -Wall -g -o match match.c
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) break 114
+Breakpoint 1 at [34m0x150f[m: file [32mmatch.c[m, line 114.
+(gdb) cp[K[Kyu[K[Kcc[Kr[K[Krun
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+
+Breakpoint 1, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:114
+114		retval = memcmp(buf1, buf2, 4);
+(gdb) val[K[K[Kp[Kri[K[Kprint retval
+$1 = 4
+(gdb) print buf3[K2[K[Kf1
+$2 = "\006\000\000\000t ho", '\000' <repeats 91 times>
+(gdb) print /x buf1
+$3 = {0x6, 0x0, 0x0, 0x0, 0x74, 0x20, 0x68, 0x6f, 0x0 [2m<repeats [m[2m92[m[2m times>[m}
+(gdb) print /f[Kx buf2
+$4 = {0x4, 0x0, 0x0, 0x6, 0x72, 0x6e, 0x65, 0x74, 0x0 [2m<repeats [m[2m92[m[2m times>[m}
+(gdb) break[K[K[K[K[Kquit
+A debugging session is active.
+
+	Inferior 1 [process 667105] will be killed.
+
+Quit anyway? (y or n) y
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim b[Kmathc[K[Kch.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x06000000[m;[27;9Hretval = memcmp(buf1, buf2, [31m4[m);[28;9H[38;5;130mif[m (retval != [31m0[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H}
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H112,23-30     Bot[25;30H[?25h[?25l[49;77H^[[25;30H[49;77H  [25;30H[49;77H^[[25;30H[49;79H[[25;30H[49;77H   [25;30H[49;77H^[[25;30H[49;79H[[25;30H[49;80H2[25;30H[49;77H    [25;30H[49;77H^[[25;30H[49;79H[[25;30H[49;80H2[25;30H[49;81H;[25;30H[49;77H     [25;30H[?25h[?25l[49;77H~@k[25;30H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [27;30H[49;89H4,23-30[27;30H[?25h[?25l[49;77H~@k[27;30H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [27;30H[28;26H{[30;9H}[49;89H4,23-30[27;30H[?25h[?25l[49;77H~@k[27;30H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [25;30H[49;89H2,23-30[25;30H[?25h[?25l[49;77H~@k[25;30H[49;77H   [25;31H[49;92H4-31[25;31H[?25h[?25l[49;77Hi[25;31H[49;77H [25;31H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H112,24-31     Bot[25;31H[?25h[?25l[31m0[m[5C;[25;37H[K[49;92H3-30[25;30H[?25h[?25l[5C;[25;36H[K[49;92H2-29[25;29H[?25h[?25l[31m4000000[m;[49;92H3-30[25;30H[?25h[?25l[49;92H4-31[25;31H[?25h[?25l[49;92H5-32[25;32H[?25h[?25l[3C;[25;36H[K[49;92H4-31[25;31H[?25h[?25l[3C;[25;35H[K[49;92H3-30[25;30H[?25h[?25l[4C[31m0[m;[49;92H4-31[25;31H[?25h[?25l[4C[31m0[m;[49;92H5-32[25;32H[?25h[?25l[31m60000[m;[49;92H6-33[25;33H[?25h[49;1H[K[25;32H[?25l[49;77H^[[25;32H[49;77H  [25;33H[49;87H112,25-32     Bot[25;32H[?25h[?25l[49;77H:[25;32H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cgdb ./matchcc -Wall -g -o match match.c
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) gb[Kdb [K[K[K[Km[Kbreak 112
+Breakpoint 1 at [34m0x14fc[m: file [32mmatch.c[m, line 112.
+(gdb) break 114
+Breakpoint 2 at [34m0x150f[m: file [32mmatch.c[m, line 114.
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+
+Breakpoint 1, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:112
+112		*value = *value | 0x40060000;
+(gdb) retval *value
+Undefined command: "retval".  Try "help".
+(gdb) print *value
+$1 = 4
+(gdb) comnti[K[K[K[Kntu[Kinue
+Continuing.
+
+Breakpoint 2, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:114
+114		retval = memcmp(buf1, buf2, 4);
+(gdb) ret[K[K[Kprint retval
+$2 = 4
+(gdb) ret[K[K[Kpritn /[K[K[K[Knt/[K /x ret[K[K[Kf[Kbuf1
+$3 = {0x6, 0x0, 0x0, 0x0, 0x74, 0x20, 0x68, 0x6f, 0x0 [2m<repeats [m[2m92[m[2m times>[m}
+(gdb) pritn [K[K[Knt bufe[K2[K[K[K[K/x buf2
+$4 = {0x4, 0x0, 0x6, 0x40, 0x72, 0x6e, 0x65, 0x74, 0x0 [2m<repeats [m[2m92[m[2m times>[m}
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 667141] will be killed.
+
+Quit anyway? (y or n) y
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match." [New File][2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;1H[94m~                                                                                                       [3;1H~                                                                                                       [4;1H~                                                                                                       [5;1H~                                                                                                       [6;1H~                                                                                                       [7;1H~                                                                                                       [8;1H~                                                                                                       [9;1H~                                                                                                       [10;1H~                                                                                                       [11;1H~                                                                                                       [12;1H~                                                                                                       [13;1H~                                                                                                       [14;1H~                                                                                                       [15;1H~                                                                                                       [16;1H~                                                                                                       [17;1H~                                                                                                       [18;1H~                                                                                                       [19;1H~                                                                                                       [20;1H~                                                                                                       [21;1H~                                                                                                       [22;1H~                                                                                                       [23;1H~                                                                                                       [24;1H~                                                                                                       [25;1H~                                                                                                       [26;1H~                                                                                                       [27;1H~                                                                                                       [28;1H~                                                                                                       [29;1H~                                                                                                       [30;1H~                                                                                                       [31;1H~                                                                                                       [32;1H~                                                                                                       [33;1H~                                                                                                       [34;1H~                                                                                                       [35;1H~                                                                                                       [36;1H~                                                                                                       [37;1H~                                                                                                       [38;1H~                                                                                                       [39;1H~                                                                                                       [40;1H~                                                                                                       [41;1H~                                                                                                       [42;1H~                                                                                                       [43;1H~                                                                                                       [44;1H~                                                                                                       [45;1H~                                                                                                       [46;1H~                                                                                                       [47;1H~                                                                                                       [48;1H~                                                                                                       [m[49;87H0,0-1[9CAll[1;1H[?25h[?25l[49;77H^[[1;1H[49;77H  [1;1H[49;77H^[[1;1H[49;79H[[1;1H[49;77H   [1;1H[49;77H^[[1;1H[49;79H[[1;1H[49;80H2[1;1H[49;77H    [1;1H[49;77H^[[1;1H[49;79H[[1;1H[49;80H2[1;1H[49;81H;[1;1H[49;77H     [1;1H[49;77H^[[1;1H[49;79H[[1;1H[49;80H2[1;1H[49;81H;[1;1H[49;82H2[1;1H[49;77H      [1;1H[?25h[?25l[49;77H^[[1;1H[49;77H  [1;1H[49;77H^[[1;1H[49;77H  [1;1H[?25h[?25l[49;77H:[1;1H[49;1H[K[49;1H:[?2004h[?25hw[?25l[49;2H[K[49;2H[?25hq[?25l[?2004l[23;2t[23;1t[49;1H[K[49;1H[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ m[Kvim matchc[K.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x40060000[m;[27;9Hretval = memcmp(buf1, buf2, [31m4[m);[28;9H[38;5;130mif[m (retval != [31m0[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H}
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H112,25-32     Bot[25;32H[?25h[?25l[49;77H^[[25;32H[49;77H  [25;32H[49;77H^[[25;32H[49;79H[[25;32H[49;77H   [25;32H[49;77H^[[25;32H[49;79H[[25;32H[49;80H2[25;32H[49;77H    [25;32H[49;77H^[[25;32H[49;79H[[25;32H[49;80H2[25;32H[49;81H;[25;32H[49;77H     [25;32H[49;77H^[[25;32H[49;79H[[25;32H[49;80H2[25;32H[49;81H;[25;32H[49;82H2[25;32H[49;77H      [25;32H[?25h[?25l[49;77H~@k[25;32H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [27;32H[49;89H4,25-32[27;32H[?25h[?25l[49;77H~@k[27;32H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [29;32H[28;26H{[30;9H}[49;89H6,18-32[29;32H[?25h[?25l[49;77H~@k[29;32H[49;77H   [30;16H[106m{[32;9H}[m[49;89H7,9-16 [30;16H[?25h[?25l[49;77H~@k[30;16H[49;77H   [31;32H[30;16H{[32;9H}[49;89H8,18-32[31;32H[?25h[?25l[49;77H~@k[31;32H[49;77H   [32;9H[30;16H[106m{[32;9H}[m[49;89H9,2-9  [32;9H[?25h[?25l[49;77H~@k[32;9H[49;77H   [33;17H[30;16H{[32;9H}[33;16H[34m[106m()[m[49;88H20,17 [33;17H[?25h[?25l[49;77H~@k[33;17H[49;77H   [34;1H[33;16H[34m()[m[49;89H1,0-1[34;1H[?25h[?25l[49;77H~@k[34;1H[49;77H   [35;18H[49;89H2,18 [35;18H[?25h[?25l[49;77H~@k[35;18H[49;77H   [36;12H[106m{[48;1H}[m[49;89H3,12[36;12H[?25h[?25l[49;77H~@k[36;12H[49;77H   [37;27H[36;12H{[48;1H}[49;89H4,20-27[37;27H[?25h[?25l[49;77H~@k[37;27H[49;77H   [38;27H[49;89H5[38;27H[?25h[?25l[49;77H~@k[38;27H[49;77H   [39;1H[49;89H6,0-1  [39;1H[?25h[?25l[49;77H~@k[39;1H[49;77H   [40;32H[49;89H7,25-32[40;32H[?25h[?25l[49;77H~@k[40;32H[49;77H   [41;32H[49;89H8[41;32H[?25h[?25l[49;77H~@k[41;32H[49;77H   [42;32H[49;89H9[42;32H[?25h[?25l[49;77H~@k[42;32H[49;77H   [43;1H[49;88H30,0-1  [43;1H[?25h[?25l[49;77H~@k[43;1H[49;77H   [44;32H[44;15H[106m([16C)[m[49;89H1,25-32[44;32H[?25h[?25l[49;77H~@k[44;32H[49;77H   [45;32H[44;15H([16C)[49;89H2[45;32H[?25h[?25l[49;77H~@k[45;32H[49;77H   [46;32H[46;19H[106m([12C)[m[49;89H3[46;32H[?25h[?25l[49;77H~@k[46;32H[49;77H   [47;29H[46;19H([12C)[49;89H4,22-29[47;29H[?25h[?25l[49;77H~@k[47;29H[49;77H   [48;11H[34m[106m()[m[49;89H5,11   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [48;11H[?25h[?25l[49;77H~@k[48;11H[49;77H   [47;29H[48;10H[34m()[m[49;89H4,22-29[47;29H[?25h[?25l[49;77H~@k[47;29H[49;77H   [46;32H[46;19H[106m([12C)[m[49;89H3,25-32[46;32H[?25h[?25l[49;77H~@k[46;32H[49;77H   [45;32H[46;19H([12C)[49;89H2[45;32H[?25h[?25l[49;77H~@k[45;32H[49;77H   [44;32H[44;15H[106m([16C)[m[49;89H1[44;32H[?25h[?25l[49;77H~@k[44;32H[49;77H   [43;1H[44;15H([16C)[49;89H0,0-1  [43;1H[?25h[?25l[49;77H~@k[43;1H[49;77H   [42;32H[49;88H29,25-32[42;32H[?25h[?25l[49;77H~@k[42;32H[49;77H   [41;32H[49;89H8[41;32H[?25h[?25l[49;77H~@k[41;32H[49;77H   [40;32H[49;89H7[40;32H[?25h[?25l[49;77H~@k[40;32H[49;77H   [39;1H[49;89H6,0-1  [39;1H[?25h[?25l[49;77H~@k[39;1H[49;77H   [38;27H[49;89H5,20-27[38;27H[?25h[?25l[49;77H~@k[38;27H[49;77H   [37;27H[49;89H4[37;27H[?25h[?25l[49;77H~@k[37;27H[49;77H   [36;12H[106m{[48;1H}[m[49;89H3,12   [36;12H[?25h[?25l[49;77H~@k[36;12H[49;77H   [35;18H[36;12H{[48;1H}[49;89H2,18[35;18H[?25h[?25l[49;77H~@k[35;18H[49;77H   [34;1H[49;89H1,0-1[34;1H[?25h[?25l[49;77H~@k[34;1H[49;77H   [33;17H[34m[106m()[m[49;89H0,17 [33;17H[?25h[?25l[49;77H~@k[33;17H[49;77H   [32;9H[30;16H[106m{[32;9H}[m[33;16H[34m()[m[49;88H19,2-9[32;9H[?25h[?25l[49;77H~@k[32;9H[49;77H   [31;32H[30;16H{[32;9H}[49;89H8,18-32[31;32H[?25h[?25l[49;77H~@k[31;32H[49;77H   [30;16H[106m{[32;9H}[m[49;89H7,9-16 [30;16H[?25h[?25l[49;77H~@k[30;16H[49;77H   [29;32H[30;16H{[32;9H}[49;89H6,18-32[29;32H[?25h[?25l[49;77H~@k[29;32H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [27;32H[28;26H{[30;9H}[49;89H4,25-32[27;32H[?25h[?25l[49;77H~@k[27;32H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [25;32H[49;89H2,25-32[25;32H[?25h[?25l[49;77H~@k[25;32H[49;77H   [24;32H[49;89H1[24;32H[?25h[?25l[49;77H~@k[24;32H[49;77H   [25;32H[49;89H2[25;32H[?25h[?25l[49;77H~@k[25;32H[49;77H   [25;33H[49;92H6-33[25;33H[?25h[?25l[49;77Hi[25;33H[49;77H [25;33H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H112,26-33     Bot[25;33H[?25h[?25l[31m0[m[3C;[25;37H[K[49;92H5-32[25;32H[?25h[?25l[3C;[25;36H[K[49;92H4-31[25;31H[?25h[?25l[3C;[25;35H[K[49;92H3-30[25;30H[?25h[?25l[31m0[m[3C;[25;34H[K[49;92H2-29[25;29H[?25h[?25l[4C[31m0[m;[49;92H3-30[25;30H[?25h[?25l[31m20000[m;[49;92H4-31[25;31H[?25h[?25l[4C[31m0[m;[49;92H5-32[25;32H[?25h[?25l[4C[31m0[m;[49;92H6-33[25;33H[?25h[?25l[49;89H3,2-9  [26;9H[?25h[?25l[49;89H4,26-33[27;33H[?25h[?25l[28;26H[106m{[30;9H}[m[49;89H5,20-27[28;27H[?25h[?25l{[30;9H}[49;89H6,19-33[29;33H[?25h[?25l[30;16H[106m{[32;9H}[m[49;89H7,10-17[30;17H[?25h[?25l{[32;9H}[49;89H8,19-33[31;33H[?25h[?25l[30;16H[106m{[32;9H}[m[49;89H9,3-10 [32;10H[?25h[?25l[30;16H{[32;9H}[49;89H8,19-33[31;33H[?25h[?25l[30;16H[106m{[32;9H}[m[49;89H7,10-17[30;17H[?25h[?25l{[32;9H}[49;89H6,19-33[29;33H[?25h[?25l[28;26H[106m{[30;9H}[m[49;89H5,20-27[28;27H[?25h[?25l{[30;9H}[49;89H4,26-33[27;33H[?25h[?25l[49;89H3,2-9  [26;9H[?25h[?25l[49;89H2,26-33[25;33H[?25h[?25l[49;89H1[24;33H[?25h[?25l[49;89H0,23-30[23;30H[?25h[?25l[49;89H1,26-33[24;33H[?25h[?25l[49;89H2[25;33H[?25h[?25l[49;89H3,2-9  [26;9H[?25h[?25l[49;89H4,26-33[27;33H[?25h[?25l[49;89H3,2-9  [26;9H[?25h[?25l[49;89H2,26-33[25;33H[?25h[?25l[49;89H1[24;33H[?25h[?25l[49;89H0,23-30[23;30H[?25h[?25l[49;88H09,1    [22;1H[?25h[?25l[49;88H10,23-30[23;30H[?25h[?25l[49;89H1,26-33[24;33H[?25h[?25l[49;89H2[25;33H[?25h[49;1H[K[25;32H[?25l[49;77H^[[25;32H[49;77H  [25;33H[49;87H112,25-32     Bot[25;32H[?25h[?25l[49;77H:[25;32H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[49;3H[K[49;3H[?25h[?25l[49;2H[K[49;2H[?25hq[?25l[49;2H[K[49;2H[?25hwq[?25l[?2004l"match.c" 135L, 3905C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.c[Kgdb ./matchcc -Wall -g -o match match.c[18Pdb ./matchcc -Wall -g -o match match.c
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[C[Kgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) break 119
+Breakpoint 1 at [34m0x153c[m: file [32mmatch.c[m, line 120.
+(gdb) c[Kclear
+No source file specified.
+(gdb) brea[K[K[K[Kclear 119
+No breakpoint at 119.
+(gdb) brea [Kk 110
+Breakpoint 2 at [34m0x14f1[m: file [32mmatch.c[m, line 110.
+(gdb) break 112
+Breakpoint 3 at [34m0x14fc[m: file [32mmatch.c[m, line 112.
+(gdb) info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   [34m0x000000000000153c[m in [33msecondTest[m at [32mmatch.c[m:120
+2       breakpoint     keep y   [34m0x00000000000014f1[m in [33msecondTest[m at [32mmatch.c[m:110
+3       breakpoint     keep y   [34m0x00000000000014fc[m in [33msecondTest[m at [32mmatch.c[m:112
+(gdb) dee[Klete 1
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+
+Breakpoint 2, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:110
+110		value = (int *) buf2;
+(gdb) value[K[K[K[K[Kprint value
+$1 = (int *) [34m0x4[m
+(gdb) print nb[K[Kbuf2
+$2 = "\004\000\000\000rnet", '\000' <repeats 91 times>
+(gdb) b[Kprint /x buf2
+$3 = {0x4, 0x0, 0x0, 0x0, 0x72, 0x6e, 0x65, 0x74, 0x0 [2m<repeats [m[2m92[m[2m times>[m}
+(gdb) c[Kcontinue
+Continuing.
+
+Breakpoint 3, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:112
+112		*value = *value | 0x02000000;
+(gdb) value[K[K[K[K[Kpr[Krint value
+$4 = (int *) [34m0x555555558040[m <[33mbuf2[m>
+(gdb) print *value
+$5 = 4
+(gdb) break  1[K[K114[K6[K4
+Breakpoint 4 at [34m0x55555555550f[m: file [32mmatch.c[m, line 114.
+(gdb) break 116
+Breakpoint 5 at [34m0x555555555530[m: file [32mmatch.c[m, line 116.
+(gdb) r[Kcontinue
+Continuing.
+
+Breakpoint 4, [33msecondTest[m ([36mfilename1[m=0x7fffffffe2f0 "/bin/ls", [36mfilename2[m=0x7fffffffe360 "/bin/cat")[m
+   [m at [32mmatch.c[m:114
+114		retval = memcmp(buf1, buf2, 4);
+(gdb) print buf21[K[K1[K1
+$6 = "\006\000\000\000t ho", '\000' <repeats 91 times>
+(gdb) print buf2
+$7 = "\004\000\000\002rnet", '\000' <repeats 91 times>
+(gdb) e[Kquit
+A debugging session is active.
+
+	Inferior 1 [process 667307] will be killed.
+
+Quit anyway? (y or n) y
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim ca[K[Kmatch.c
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;49r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[49;1H"match.c" 135L, 3905C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;9H[32mint[m *value;[2;9H[32mint[m retval;[4;9H[38;5;130mif[m ((filedes1 = open(filename1, O_RDONLY)) < [31m0[m) {[5;17Hperror(filename1);[6;17Hexit(-[31m1[m);[7;9H}[8;9H[38;5;130mif[m ((filedes2 = open(filename2, O_RDONLY)) < [31m0[m) {[9;17Hperror(filename2);[10;17Hexit(-[31m1[m);[11;9H}[13;9Hretval = lseek(filedes1, [31m64[m, [31mSEEK_CUR[m);[14;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[15;9Hretval = read(filedes1, buf1, [31m4[m);[16;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[18;9Hretval = lseek(filedes2, [31m124[m, [31mSEEK_CUR[m);[19;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"lseek error"[m);[20;9Hretval = read(filedes2, buf2, [31m4[m);[21;9H[38;5;130mif[m (retval < [31m0[m) perror([31m"read error"[m);[23;9Hvalue = ([32mint[m *) buf2;[24;9H[34m/* Hint -- the error is in the next line */[m[25;9H*value = *value | [31m0x02000000[m;[27;9Hretval = memcmp(buf1, buf2, [31m4[m);[28;9H[38;5;130mif[m (retval != [31m0[m) {[29;17Hsorry([31m"second Test"[m);[30;9H} [38;5;130melse[m {[31;17Hprintf([31m"You debugged the second one correctly![m[35m\n[m[31m"[m);[32;9H}
+} [34m// secondTest()
+
+/* --- main --- */[m
+[32mint[m main() {[37;9H[32mchar[m file1[buflen];[38;9H[32mchar[m file2[buflen];[40;9Hstrcpy(file1,[31m"/etc/hosts"[m);[41;9Hstrcpy(file2,[31m"/etc/services"[m);[42;9HfirstTest(file1, file2);[44;9Hstrcpy(file1, [31m"/bin/ls"[m);[45;9Hstrcpy(file2, [31m"/bin/cat"[m);[46;9HsecondTest(file1, file2);[47;9H[38;5;130mreturn[m([31m0[m); [34m// success[m
+} [34m// main()[m[49;87H112,25-32     Bot[25;32H[?25h[?25l[49;77H^[[25;32H[49;77H  [25;32H[49;77H^[[25;32H[49;79H[[25;32H[49;77H   [25;32H[49;77H^[[25;32H[49;79H[[25;32H[49;80H2[25;32H[49;77H    [25;32H[49;77H^[[25;32H[49;79H[[25;32H[49;80H2[25;32H[49;81H;[25;32H[49;77H     [25;32H[49;77H^[[25;32H[49;79H[[25;32H[49;80H2[25;32H[49;81H;[25;32H[49;82H2[25;32H[49;77H      [25;32H[?25h[?25l[49;77H~@k[25;32H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [27;32H[49;89H4,25-32[27;32H[?25h[?25l[49;77H~@k[27;32H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [29;32H[28;26H{[30;9H}[49;89H6,18-32[29;32H[?25h[?25l[49;77H~@k[29;32H[49;77H   [30;16H[106m{[32;9H}[m[49;89H7,9-16 [30;16H[?25h[?25l[49;77H~@k[30;16H[49;77H   [31;32H[30;16H{[32;9H}[49;89H8,18-32[31;32H[?25h[?25l[49;77H~@k[31;32H[49;77H   [32;9H[30;16H[106m{[32;9H}[m[49;89H9,2-9  [32;9H[?25h[?25l[49;77H~@k[32;9H[49;77H   [33;17H[30;16H{[32;9H}[33;16H[34m[106m()[m[49;88H20,17 [33;17H[?25h[?25l[49;77H~@k[33;17H[49;77H   [34;1H[33;16H[34m()[m[49;89H1,0-1[34;1H[?25h[?25l[49;77H~@k[34;1H[49;77H   [35;18H[49;89H2,18 [35;18H[?25h[?25l[49;77H~@k[35;18H[49;77H   [36;12H[106m{[48;1H}[m[49;89H3,12[36;12H[?25h[?25l[49;77H~@k[36;12H[49;77H   [37;27H[36;12H{[48;1H}[49;89H4,20-27[37;27H[?25h[?25l[49;77H~@k[37;27H[49;77H   [38;27H[49;89H5[38;27H[?25h[?25l[49;77H~@k[38;27H[49;77H   [39;1H[49;89H6,0-1  [39;1H[?25h[?25l[49;77H~@k[39;1H[49;77H   [40;32H[49;89H7,25-32[40;32H[?25h[?25l[49;77H~@k[40;32H[49;77H   [41;32H[49;89H8[41;32H[?25h[?25l[49;77H~@k[41;32H[49;77H   [42;32H[49;89H9[42;32H[?25h[?25l[49;77H~@k[42;32H[49;77H   [43;1H[49;88H30,0-1  [43;1H[?25h[?25l[49;77H~@k[43;1H[49;77H   [44;32H[44;15H[106m([16C)[m[49;89H1,25-32[44;32H[?25h[?25l[49;77H~@k[44;32H[49;77H   [43;1H[44;15H([16C)[49;89H0,0-1  [43;1H[?25h[?25l[49;77H~@k[43;1H[49;77H   [42;32H[49;88H29,25-32[42;32H[?25h[?25l[49;77H~@k[42;32H[49;77H   [41;32H[49;89H8[41;32H[?25h[?25l[49;77H~@k[41;32H[49;77H   [40;32H[49;89H7[40;32H[?25h[?25l[49;77H~@k[40;32H[49;77H   [39;1H[49;89H6,0-1  [39;1H[?25h[?25l[49;77H~@k[39;1H[49;77H   [38;27H[49;89H5,20-27[38;27H[?25h[?25l[49;77H~@k[38;27H[49;77H   [37;27H[49;89H4[37;27H[?25h[?25l[49;77H~@k[37;27H[49;77H   [36;12H[106m{[48;1H}[m[49;89H3,12   [36;12H[?25h[?25l[49;77H~@k[36;12H[49;77H   [35;18H[36;12H{[48;1H}[49;89H2,18[35;18H[?25h[?25l[49;77H~@k[35;18H[49;77H   [34;1H[49;89H1,0-1[34;1H[?25h[?25l[49;77H~@k[34;1H[49;77H   [33;17H[34m[106m()[m[49;89H0,17 [33;17H[?25h[?25l[49;77H~@k[33;17H[49;77H   [32;9H[30;16H[106m{[32;9H}[m[33;16H[34m()[m[49;88H19,2-9[32;9H[?25h[?25l[49;77H~@k[32;9H[49;77H   [31;32H[30;16H{[32;9H}[49;89H8,18-32[31;32H[?25h[?25l[49;77H~@k[31;32H[49;77H   [30;16H[106m{[32;9H}[m[49;89H7,9-16 [30;16H[?25h[?25l[49;77H~@k[30;16H[49;77H   [29;32H[30;16H{[32;9H}[49;89H6,18-32[29;32H[?25h[?25l[49;77H~@k[29;32H[49;77H   [28;26H[106m{[30;9H}[m[49;89H5,19-26[28;26H[?25h[?25l[49;77H~@k[28;26H[49;77H   [27;32H[28;26H{[30;9H}[49;89H4,25-32[27;32H[?25h[?25l[49;77H~@k[27;32H[49;77H   [26;8H[49;89H3,1-8  [26;8H[?25h[?25l[49;77H~@k[26;8H[49;77H   [25;32H[49;89H2,25-32[25;32H[?25h[?25l[49;77H~@k[25;32H[49;77H   [24;32H[49;89H1[24;32H[?25h[?25l[49;77H~@k[24;32H[49;77H   [25;32H[49;89H2[25;32H[?25h[?25l[49;77H~@k[25;32H[49;77H   [25;33H[49;92H6-33[25;33H[?25h[?25l[49;77H~@k[25;33H[49;77H   [25;34H[49;92H7-34[25;34H[?25h[?25l[49;77H~@k[25;34H[49;77H   [25;35H[49;92H8-35[25;35H[?25h[?25l[49;77H~@k[25;35H[49;77H   [25;36H[49;92H9-36[25;36H[?25h[?25l[49;77H~@k[25;36H[49;77H   [25;37H[49;91H30-37[25;37H[?25h[?25l[49;77H~@k[25;37H[49;77H   [25;37H[?25h[?25l[49;77H~@k[25;37H[49;77H   [25;36H[49;91H29-36[25;36H[?25h[?25l[49;77H~@k[25;36H[49;77H   [25;37H[49;91H30-37[25;37H[?25h[?25l[49;77Hi[25;37H[49;77H [25;37H[49;1H[1m-- INSERT --[m[49;13H[K[49;87H112,30-37     Bot[25;37H[?25h[?25l;[25;37H[K[49;91H29-36[25;36H[?25h[?25l=;[49;91H30-37[25;37H[?25h[?25l;[25;37H[K[49;91H29-36[25;36H[?25h[?25l;[25;36H[K[49;92H8-35[25;35H[?25h[?25l;[25;35H[K[49;92H7-34[25;34H[?25h[?25l;[25;34H[K[49;92H6-33[25;33H[?25h[?25l;[25;33H[K[49;92H5-32[25;32H[?25h[?25l;[25;32H[K[49;92H4-31[25;31H[?25h[?25l;[25;31H[K[49;92H3-30[25;30H[?25h[?25l0x;[25;30H[K[49;92H2-29[25;29H[?25h[?25l[31m0[m;[25;29H[K[49;92H1-28[25;28H[?25h[?25l0x;[49;92H2-29[25;29H[?25h[?25l[31m0x6[m;[49;92H3-30[25;30H[?25h[49;1H[K[25;29H[?25l[49;77H^[[25;29H[49;77H  [25;30H[49;87H112,22-29     Bot[25;29H[?25h[?25l[49;77H:[25;29H[49;77H[K[49;1H:[?2004h[?25hwq[?25l[?2004l"match.c" 135L, 3898C written[23;2t[23;1t
+[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ vim match.cgdb ./matchcc -Wall -g -o match match.c
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ gcc -Wall -g -o match match.c[18Pvim[C[C[C[C[C[C[C[Cgdb ./match
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./match[m...
+(gdb) run
+Starting program: /home/amko248/CS270/Lab1/match 
+You debugged the first one correctly!
+You debugged the second one correctly!
+[Inferior 1 (process 667379) exited normally]
+(gdb) ex[K[Kquit
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ g++ -g -g [K[Ko match mathc[K[Kch.c
+[01m[Kmatch.c:[m[K In function ‘[01m[Kvoid firstTest(char*, char*)[m[K’:
+[01m[Kmatch.c:79:9:[m[K [01;35m[Kwarning: [m[KISO C++ forbids converting a string constant to ‘[01m[Kchar*[m[K’ [[01;35m[K-Wwrite-strings[m[K]
+   79 |   sorry([01;35m[K"first Test"[m[K);
+      |         [01;35m[K^~~~~~~~~~~~[m[K
+[01m[Kmatch.c:[m[K In function ‘[01m[Kvoid secondTest(char*, char*)[m[K’:
+[01m[Kmatch.c:116:9:[m[K [01;35m[Kwarning: [m[KISO C++ forbids converting a string constant to ‘[01m[Kchar*[m[K’ [[01;35m[K-Wwrite-strings[m[K]
+  116 |   sorry([01;35m[K"second Test"[m[K);
+      |         [01;35m[K^~~~~~~~~~~~~[m[K
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ ./match
+You debugged the first one correctly!
+You debugged the second one correctly!
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ cat mathc[K[Khc[K[Kch.c
+/* There are two bugs in this program.  In both cases the bug is
+ * an incorrect constant in the program.  Find the incorrect constant,
+ * change it in the C source to be the correct value, recompile and run,
+ * and you will get the memcmp() call to be equal -- i.e., match! 
+ *
+ * Your task is to use <span class="program">gdb</span> to debug the
+ * program. You will record your debugging session using the "script"
+ * program, and then upload the resulting file as your submission to
+ * the Canvas assignment "Lab1".
+ *
+ * YOU MUST PERFORM THIS EXERCISE ON YOUR VM IN ORDER TO GET CREDIT!
+ *
+ *  1. Record your session:  Start the script command:
+ *     script MyDebugSession.txt
+ *  2. Compile the program so that it can be debugged
+ *     gcc -Wall -g -o match match.c
+ *  3. Run gdb on the program:
+ *     gdb ./match
+ *  4. Use gdb commands to run the program and find the bugs.
+ *     There are other tools that may be helpful, especially "od" (octal dump).
+ *  5. Edit the program to fix the bugs, recompile, and rerun the
+ *     program without gdb; this should print out a message indicating
+ *     that you have debugged both phases correctly.
+ *  6. Display your new version of the program
+ *       cat match.c
+ *  7. Stop recording your session:
+ *        "exit"
+ *  8. Now submit MyDebugSession.txt to the Canvas Lab1 assignment.
+ *     If you are using NoMachine, you can do this right from a browser
+ *     on your VM. If you are logged in via ssh from another machine, logout
+ *     "exit" or "^D" (control-D) and copy the script file to that
+ *     other machine using scp, then upload using a browser on that machine.
+ */								       
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define buflen 100
+char buf1[buflen];
+char buf2[buflen];
+
+/* --- sorry --- */
+void sorry(char *test) {
+	printf("Sorry!  You did not debug the %s correctly.\n", test);
+	exit(-1);
+} // sorry()
+
+/* --- firstTest --- */
+void firstTest(char *name1, char *name2) {
+	int fd1, fd2;
+	int retval;
+
+	if ((fd1 = open(name1, O_RDONLY)) < 0) {
+		perror(name1);
+		exit(-1);
+	}
+	if ((fd2 = open(name2, O_RDONLY)) < 0) {
+		perror(name2);
+		exit(-1);
+	}
+
+	/* Hint -- the error is an incorrect constant in the next line */
+	retval = lseek(fd1, 72, SEEK_CUR);
+	if (retval < 0) perror("lseek error");
+	retval = read(fd1, buf1, 8);
+	if (retval < 0) perror("read error");
+
+	retval = lseek(fd2, 20, SEEK_CUR);
+	if (retval < 0) perror("lseek error");
+	retval = read(fd2, buf2, 8);
+	if (retval < 0) perror("read error");
+	
+	retval = memcmp(buf1, buf2, 0);
+	if (retval != 0) {
+		sorry("first Test");
+	} else {
+		printf("You debugged the first one correctly!\n");
+	}
+}
+
+/* --- secondTest --- */
+void secondTest(char *filename1, char *filename2) {
+	int filedes1, filedes2;
+	int *value;
+	int retval;
+
+	if ((filedes1 = open(filename1, O_RDONLY)) < 0) {
+		perror(filename1);
+		exit(-1);
+	}
+	if ((filedes2 = open(filename2, O_RDONLY)) < 0) {
+		perror(filename2);
+		exit(-1);
+	}
+	
+	retval = lseek(filedes1, 64, SEEK_CUR);
+	if (retval < 0) perror("lseek error");
+	retval = read(filedes1, buf1, 4);
+	if (retval < 0) perror("read error");
+
+	retval = lseek(filedes2, 124, SEEK_CUR);
+	if (retval < 0) perror("lseek error");
+	retval = read(filedes2, buf2, 4);
+	if (retval < 0) perror("read error");
+
+	value = (int *) buf2;
+	/* Hint -- the error is in the next line */
+	*value = *value | 0x6;
+	
+	retval = memcmp(buf1, buf2, 4);
+	if (retval != 0) {
+		sorry("second Test");
+	} else {
+		printf("You debugged the second one correctly!\n");
+	}
+} // secondTest()
+
+/* --- main --- */
+int main() {
+	char file1[buflen];
+	char file2[buflen];
+
+	strcpy(file1,"/etc/hosts");
+	strcpy(file2,"/etc/services");
+	firstTest(file1, file2);
+
+	strcpy(file1, "/bin/ls");
+	strcpy(file2, "/bin/cat");
+	secondTest(file1, file2);
+	return(0); // success
+} // main()
+]0;amko248@amko248: ~/CS270/Lab1[01;32mamko248@amko248[00m:[01;34m~/CS270/Lab1[00m$ exit
+exit
+
+Script done on 2021-02-14 13:42:29-05:00 [COMMAND_EXIT_CODE="0"]
